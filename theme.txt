@@ -1,0 +1,57 @@
+# Global properties
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#000000"
+terminal-font: "Roboto Mono Regular 10"
+terminal-box: "terminal_box_*.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
+# Boot menu
++ boot_menu {
+  top = 50%-202
+  width = 288
+  height = 516
+  left = 50%-144
+  item_font = "Pure Regular 16"
+  item_color = "#ffffff"
+  selected_item_color = "#ffffff"
+  item_height = 36
+  item_spacing = 4
+  item_padding = 0
+  item_icon_space = 0
+  item_pixmap_style = "item.png"
+  selected_item_pixmap_style = "selected_item.png"
+}
+
+# Countdown message
++ label {
+  left = 0
+  top = 50%+165
+  width = 100%
+  align = "center"
+  id = "__timeout__"
+  text = "Autostart in %ds."
+  color = "#ffffff"
+  font = "Roboto Mono Regular 10"
+}
+
+# Navigation keys hint
++ label {
+  left = 0
+  top = 50%+183
+  width = 100%
+  align = "center"
+  text = "↑ and ↓ to select, Enter to confirm"
+  color = "#ffffff"
+  font = "Roboto Mono Regular 10"
+}
+
++ image {
+	left = 50%-156
+	top = 50%-214
+	file = "frame.png"
+}
