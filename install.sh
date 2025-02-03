@@ -21,7 +21,7 @@ fi
 read -p "Enter background filename (or press enter to use default): " filename
 
 # Set the default filename if the user didn't provide one
-filename=${filename:-load_1.png}
+filename=${filename:-1.png}
 
 # Add logog to selected background
 python3 create_bg.py "$filename"
