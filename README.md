@@ -1,5 +1,7 @@
 # HOI4 GRUB Theme
 
+![Screenshot](screenshots/screenshot1.png)
+
 GRUB theme stylized as the main menu of Hearts of Iron IV 
 
 ## Installation
