@@ -43,8 +43,13 @@ THEME_NAME=$(basename "$(pwd)")
 # Copy the theme to the GRUB themes directory
 mkdir -p "$GRUB_THEME_PATH/$THEME_NAME" && cp -r "$THEME_DIR"/* "$GRUB_THEME_PATH/$THEME_NAME/"
 
+# Backup grub config
+cp -an /etc/default/grub /etc/default/grub.bak
+
 # Update the GRUB configuration to use the new theme
-sed -i "s|^GRUB_THEME=.*|GRUB_THEME=\"$GRUB_THEME_PATH/$THEME_NAME/theme.txt\"|" "$GRUB_CONFIG"
+grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null && sed -i '/GRUB_THEME=/d' /etc/default/grub
+
+echo "GRUB_THEME=\"${THEME_DIR}/${THEME_NAME}/theme.txt\"" >> /etc/default/grub
 
 # Update GRUB
 echo "Updating GRUB..."
