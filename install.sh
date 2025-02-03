@@ -49,7 +49,7 @@ cp -an /etc/default/grub /etc/default/grub.bak
 # Update the GRUB configuration to use the new theme
 grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null && sed -i '/GRUB_THEME=/d' /etc/default/grub
 
-echo "GRUB_THEME=\"${THEME_DIR}/${THEME_NAME}/theme.txt\"" >> /etc/default/grub
+echo "GRUB_THEME=\"/boot/grub/themes/${THEME_NAME}/theme.txt\"" >> /etc/default/grub
 
 # Update GRUB
 echo "Updating GRUB..."
