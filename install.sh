@@ -18,15 +18,16 @@ if [ ! -f "$GRUB_CONFIG" ]; then
     exit 1
 fi
 
+echo "You can watch all avialable background options in backgrounds/ directory."
 read -p "Enter background filename (or press enter to use default): " filename
 
-# Set the default filename if the user didn't provide one
 filename=${filename:-1.png}
 
-# Add logog to selected background
+echo "Generating background..."
+# Add logo to selected background
 python3 create_bg.py "$filename"
 
-# Check if the provided directory exists
+# Check if theme directory exists
 if [ ! -d "$THEME_DIR" ]; then
     echo "The directory $THEME_DIR does not exist."
     exit 1
