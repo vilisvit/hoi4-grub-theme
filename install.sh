@@ -24,8 +24,13 @@ read -p "Enter background filename (or press enter to use default): " filename
 filename=${filename:-1.png}
 
 echo "Generating background..."
+
+python -m venv env
+source env/bin/activate
+pip3 install pillow
 # Add logo to selected background
 python3 create_bg.py "$filename"
+deactivate
 
 # Check if theme directory exists
 if [ ! -d "$THEME_DIR" ]; then
